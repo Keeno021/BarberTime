@@ -17,6 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="navbar-nav">
         <a class="nav-item nav-link" href="#">Create account</a>
+        <a class="nav-item nav-link" href="signup.php">Sign up</a>
         <!-- <a class="nav-item nav-link" href="#">Overzicht personen</a>
         <a class="nav-item nav-link" href="#">Overzicht notitie</a> -->
     </div>
