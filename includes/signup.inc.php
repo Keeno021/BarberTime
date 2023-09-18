@@ -1,19 +1,28 @@
 <?php
-include "includes/dbconnection.php"; 
+include "../includes/dbconnection.php"; 
 
 if (isset($_POST["signup"])) {
+     
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $res = mysqli_query($conn, "SELECT * FROM adminlogin where username='$username' AND password='$password'");
-    $row = mysqli_fetch_assoc($res);
-        if(($row['username'] == $username)) {
-            $_SESSION['user']=$row['username'];
-                header("location: admin/index.php");
-        }
-        else if(($username == '') && ($password == '')) {
-            echo "<script language='javascript'>";
-            echo "alert('Invalid Inputs')";
-            echo "</script>";
-        }
+    $email = $_POST["email"];
+
+    $sql = "INSERT INTO users (username, password, email)  VALUES (?,?,?)";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt,$sql)) {
+        header("location: ../signup.php?error=sqlerror");
+        exit();
+    } else {
+        $hashPwd = password_hash($password, PASSWORD_DEFAULT);
+
+        mysqli_stmt_bind_param($stmt, "sss", $username, $hashPwd, $email);
+        mysqli_stmt_execute($stmt);
+        header("location: ../signup.php?signup=success");
+        exit(); 
+    }
+    } else {
+        header("location: ../signup.php");
+        exit();
     }
 ?>
