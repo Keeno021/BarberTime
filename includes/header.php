@@ -1,10 +1,3 @@
-<?php ob_start(); ?>
-<?php session_start(); 
-// $_SESSION['s_username'] = null;
-// $_SESSION['s_firstname'] = null;
-// $_SESSION['s_lastname'] = null;
-// $_SESSION['s_role'] = null;
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,3 +14,18 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" href="#">Create account</a>
+        <!-- <a class="nav-item nav-link" href="#">Overzicht personen</a>
+        <a class="nav-item nav-link" href="#">Overzicht notitie</a> -->
+    </div>
+  </div>
+  <!-- <div class="navbar-nav ms-auto">
+        <form class="d-flex" method="POST" action="uitloggen.php">
+        <input type="submit" name="loguit" class="btn btn-outline-danger" value="Loguit">
+      </form>
+</div> -->
+</nav>
+
+</body>
