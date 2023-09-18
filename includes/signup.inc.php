@@ -2,17 +2,23 @@
 include "../includes/dbconnection.php"; 
 
 if (isset($_POST["signup"])) {
-     
+
     $username = $_POST["username"];
     $password = $_POST["password"];
     $email = $_POST["email"];
 
-    $sql = "INSERT INTO users (username, password, email)  VALUES (?,?,?)";
-    $stmt = mysqli_stmt_init($conn);
+    if(empty($username) || empty($password) ||  empty($email)) {
+        header("location: ../signup.php?error=emptyfields");
+        exit();
+
+    } else {
+        $sql = "INSERT INTO users (username, password, email)  VALUES (?,?,?)";
+        $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt,$sql)) {
         header("location: ../signup.php?error=sqlerror");
         exit();
+
     } else {
         $hashPwd = password_hash($password, PASSWORD_DEFAULT);
 
@@ -21,8 +27,8 @@ if (isset($_POST["signup"])) {
         header("location: ../signup.php?signup=success");
         exit(); 
     }
+    }
     } else {
         header("location: ../signup.php");
         exit();
     }
-?>

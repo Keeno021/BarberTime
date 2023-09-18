@@ -1,23 +1,19 @@
 <?php 
-include "includes/dbconnection.php"; 
+session_start();
 include "includes/header.php";
 ?>
 <div class="container">
     <div class="row mt-5">
     <div class="col-sm-3"></div>
         <div class="col">
-            <form method="POST">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="username" class="form-control" id="username" name="username" aria-describedby="username"
-                        placeholder="Enter username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                </div>
-                <button type="submit" name="login" class="btn btn-primary mt-2">Login</button>
-            </form>
+            <h1>Main page</h1>
+            <?php 
+                if (isset($_SESSION['username'])) {
+                    echo '<p>You are logged in</p>';
+                } else {
+                    echo '<p>You are not logged in</p>';
+                }
+            ?>
         </div>
         <div class="col-sm-3"></div>
     </div>

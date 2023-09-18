@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -15,18 +15,23 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" href="#">Create account</a>
-        <a class="nav-item nav-link" href="signup.php">Sign up</a>
-        <!-- <a class="nav-item nav-link" href="#">Overzicht personen</a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="index.php">Home</a>
+            <?php 
+                if (isset($_SESSION['username'])) {
+                    echo '<form class="d-flex" method="POST" action="includes/logout.inc.php">
+                    <input type="submit" name="logout" class="btn btn-outline-danger" value="Logout">
+                  </form> ';
+                } else {
+                    echo '<a class="nav-item nav-link" href="signup.php">Sign up</a> <a class="nav-item nav-link" href="login.php">Login</a>';
+                }
+    ?>
+
+            <!-- <a class="nav-item nav-link" href="#">Overzicht personen</a>
         <a class="nav-item nav-link" href="#">Overzicht notitie</a> -->
-    </div>
-  </div>
-  <!-- <div class="navbar-nav ms-auto">
-        <form class="d-flex" method="POST" action="uitloggen.php">
-        <input type="submit" name="loguit" class="btn btn-outline-danger" value="Loguit">
-      </form>
-</div> -->
-</nav>
+        </div>
+        </div>
+        </div>
+    </nav>
 
 </body>
