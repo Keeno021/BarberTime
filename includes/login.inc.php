@@ -9,14 +9,14 @@ if (isset($_POST["login"])) {
         header("location: ../index.php?error=emptyfields");
         exit(); 
     } else {
-        $sql = "SELECT * FROM users WHERE email=? or username=?";
+        $sql = "SELECT * FROM users WHERE username=? or admin=?";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("location: ../index.php?error=sqlerror");
         exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "ss", $username, $username);
+            mysqli_stmt_bind_param($stmt, "ss", $username,$username);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
 
@@ -31,8 +31,14 @@ if (isset($_POST["login"])) {
                     $_SESSION['idUsers'] = $row['idUsers'];
                     $_SESSION['username'] = $row['username'];
 
-                    header("location: ../index.php?login=success");
-                    exit();
+                    if ($row['admin'] == null) {
+                        header("location: ../index.php?login=success");
+                        exit();
+                    } else {
+                        header("location: ../admin/admin.php?login=success");
+                        exit();
+                    }
+                   
 
                 } 
                 else {

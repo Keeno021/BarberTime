@@ -23,7 +23,7 @@
                     <input type="submit" name="logout" class="btn btn-outline-danger" value="Logout">
                   </form> ';
                 } else {
-                    echo '<a class="nav-item nav-link" href="signup.php">Sign up</a> <a class="nav-item nav-link" href="login.php">Login</a>';
+                    echo '<a class="nav-item nav-link" href="signup.php">Sign up</a> <a class="nav-item nav-link" href="../login.php">Login</a>';
                 }
     ?>
 
