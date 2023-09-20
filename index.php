@@ -9,9 +9,9 @@ include "includes/header.php";
             <h1>Main page</h1>
             <?php 
                 if (isset($_SESSION['username'])) {
-                    echo '<p>You are logged in</p>';
+                    echo '<h4>You are logged in as '. $_SESSION['username'].' </h4>';
                 } else {
-                    echo '<p>You are not logged in</p>';
+                    echo '<h4>You are not logged in</h4>';
                 }
             ?>
         </div>
