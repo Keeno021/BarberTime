@@ -16,19 +16,16 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.php">Home</a>
+            <a class="nav-item nav-link" href="../index.php">Home</a>
             <?php 
                 if (isset($_SESSION['username'])) {
-                    echo '<form class="d-flex" method="POST" action="includes/logout.inc.php">
+                    echo '<form class="d-flex" method="POST" action="../includes/logout.inc.php">
                     <input type="submit" name="logout" class="btn btn-outline-danger" value="Logout">
                   </form> ';
                 } else {
                     echo '<a class="nav-item nav-link" href="signup.php">Sign up</a> <a class="nav-item nav-link" href="login.php">Login</a>';
                 }
     ?>
-
-            <!-- <a class="nav-item nav-link" href="#">Overzicht personen</a>
-        <a class="nav-item nav-link" href="#">Overzicht notitie</a> -->
         </div>
         </div>
         </div>

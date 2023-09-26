@@ -1,11 +1,6 @@
-<?php 
-include "includes/header.php";
-?>
 <div class="container">
-    <div class="row mt-5">
-        <div class="col-sm-3"></div>
-        <div class="col">
-            <h1>Login</h1>
+    <div class="row">
+        <div class="col-sm-12">
             <form action="includes/login.inc.php" method="POST">
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -19,6 +14,5 @@ include "includes/header.php";
                 <button type="submit" name="login" class="btn btn-primary mt-2">Login</button>
             </form>
         </div>
-        <div class="col-sm-3"></div>
     </div>
 </div>

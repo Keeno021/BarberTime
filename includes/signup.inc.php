@@ -9,7 +9,7 @@ if (isset($_POST["signup"])) {
 
     // Error handeling 
     if(empty($username) || empty($password) ||  empty($email)) {
-        header("location: ../signup.php?error=emptyfields");
+        header("location: ../index.php?error=emptyfields");
         exit();
 
     } else {
@@ -18,7 +18,7 @@ if (isset($_POST["signup"])) {
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt,$sql)) {
-            header("location: ../signup.php?error=sqlerror");
+            header("location: ../index.php?error=sqlerror");
             exit();
     
         } else {
@@ -31,7 +31,7 @@ if (isset($_POST["signup"])) {
             $resultCheck = mysqli_stmt_num_rows($stmt);
 
             if ($resultCheck > 0) {
-                header("location: ../signup.php?error=usernametaken&mail=".$email);
+                header("location: ../index.php?error=usernametaken&mail=".$email);
                 exit();
             } else {
                 // Insert from into database after error handeling
@@ -39,7 +39,7 @@ if (isset($_POST["signup"])) {
                 $stmt = mysqli_stmt_init($conn);
 
                 if (!mysqli_stmt_prepare($stmt,$sql)) {
-                header("location: ../signup.php?error=sqlerror");
+                header("location: ../index.php?error=sqlerror");
                 exit();
 
     } else {
@@ -49,7 +49,7 @@ if (isset($_POST["signup"])) {
         // Binding string values 
         mysqli_stmt_bind_param($stmt, "sss", $username, $hashPwd, $email);
         mysqli_stmt_execute($stmt);
-        header("location: ../signup.php?signup=success");
+        header("location: ../index.php?signup=success");
         exit(); 
     }
             }
@@ -57,6 +57,6 @@ if (isset($_POST["signup"])) {
     }
     } else {
         // Preventing user from entering the page by accident
-        header("location: ../signup.php");
+        header("location: ../index.php");
         exit();
     }
