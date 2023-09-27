@@ -11,7 +11,8 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
-                <button type="submit" name="login" class="btn btn-primary mt-2">Login</button>
+                <p class="mt-1">No account? <a data-bs-toggle="modal" href="#togglesignup" class="highlighted-text">Sign up.</a></p>
+                <button type="submit" name="login" class="btn btn-primary">Login</button>
             </form>
         </div>
     </div>

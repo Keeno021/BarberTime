@@ -18,24 +18,25 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="index.php">Home</a>
             <?php 
                 if (isset($_SESSION['username'])) {
-                    echo '<form class="d-flex" method="POST" action="includes/logout.inc.php">
-                    <input type="submit" name="logout" class="btn btn-outline-danger" value="Logout">
-                  </form> ';
+                ?>
+            <form class="d-flex" method="POST" action="includes/logout.inc.php">
+                <input type="submit" name="logout" class="btn btn-outline-danger" value="Logout">
+            </form>
+            <?php
                 } else {
-                    echo '<a class="nav-item nav-link" data-bs-toggle="modal" href="#togglesignup">Sign up</a> <a class="nav-item nav-link" data-bs-toggle="modal" href="#togglelogin">Login</a>';
-                }
-    ?>
+            ?>
 
-            <!-- <a class="nav-item nav-link" href="#">Overzicht personen</a>
-        <a class="nav-item nav-link" href="#">Overzicht notitie</a> -->
-        </div>
-        </div>
+            <a class="nav-item nav-link" data-bs-toggle="modal" href="#togglesignup">Sign up</a>
+            <a class="nav-item nav-link" data-bs-toggle="modal" href="#togglelogin">Login</a>
+            <?php
+                }
+            ?>
+
         </div>
     </nav>
-
 </body>
