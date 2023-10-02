@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="../index.php">Home</a>
             <?php 

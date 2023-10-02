@@ -15,55 +15,51 @@ include "includes/header.php";
 
                     ?>
 
-        <div class="modal fade" id="togglesignup" aria-hidden="true" aria-labelledby="togglesignup"
-            tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="togglesignup">Sign up!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" id="modalContent">
-                        <!-- Content from PHP page will load here -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="togglelogin" aria-hidden="true" aria-labelledby="togglelogin"
-            tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="togglelogin">Login</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" id="loginContent">
-                        <!-- Content from PHP page will load here -->
+            <div class="modal fade" id="togglesignup" aria-hidden="true" aria-labelledby="togglesignup" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="togglesignup">Sign up!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modalContent">
+                            <!-- Content from PHP page will load here -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <a class="btn btn-primary" data-bs-toggle="modal" href="#togglesignup" role="button">Sign up!</a>
+            <div class="modal fade" id="togglelogin" aria-hidden="true" aria-labelledby="togglelogin" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="togglelogin">Login</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="loginContent">
+                            <!-- Content from PHP page will load here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <script>
-        $(document).ready(function () {
-            $('#togglesignup').on('show.bs.modal', function (e) {
-                $('#modalContent').load('signup.php');
-            });
-        });
-
-        $(document).ready(function () {
-            $('#togglelogin').on('show.bs.modal', function (e) {
-                $('#loginContent').load('login.php');
-            });
-        });
-    </script>
-
-        <?php
+            <a class="btn btn-primary" data-bs-toggle="modal" href="#togglesignup" role="button">Sign up!</a>
+            <?php
                 }
             ?>
+        </div>
+        <div class="col-sm-3"></div>
     </div>
-    <div class="col-sm-3"></div>
-</div>
+    <script>
+    $(document).ready(function() {
+        $('#togglesignup').on('show.bs.modal', function(e) {
+            $('#modalContent').load('signup.php');
+        });
+    });
+
+    $(document).ready(function() {
+        $('#togglelogin').on('show.bs.modal', function(e) {
+            $('#loginContent').load('login.php');
+        });
+    });
+    </script>
