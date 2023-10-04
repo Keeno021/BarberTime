@@ -44,7 +44,7 @@
     <section class="bgImg">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-4">
                 <div class="modal fade" id="togglesignup" aria-hidden="true" aria-labelledby="togglesignup"
                     tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">
@@ -76,8 +76,6 @@
                     </div>
                 </div>
 
-                <a class="btn btn-primary" data-bs-toggle="modal" href="#togglesignup" role="button">Sign up!</a>
-
                 <script>
                 $(document).ready(function() {
                     $('#togglesignup').on('show.bs.modal', function(e) {
@@ -92,6 +90,10 @@
                 });
                 </script>
             </div>
+            <div class="col-sm">
+            <a class="btn btn-primary" data-bs-toggle="modal" href="#togglesignup" role="button">Sign up!</a>
+            </div>
+            <div class="col-sm-4"></div>
         </div>
 </section>
 </body>
