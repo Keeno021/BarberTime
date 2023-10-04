@@ -18,25 +18,80 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.php">Home</a>
-            <?php 
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="index.php">Home</a>
+                <?php 
                 if (isset($_SESSION['username'])) {
                 ?>
-            <form class="d-flex" method="POST" action="includes/logout.inc.php">
-                <input type="submit" name="logout" class="btn btn-outline-danger" value="Logout">
-            </form>
-            <?php
+                <form class="d-flex" method="POST" action="includes/logout.inc.php">
+                    <input type="submit" name="logout" class="btn btn-outline-danger" value="Logout">
+                </form>
+                <?php
                 } else {
             ?>
 
-            <a class="nav-item nav-link" data-bs-toggle="modal" href="#togglesignup">Sign up</a>
-            <a class="nav-item nav-link" data-bs-toggle="modal" href="#togglelogin">Login</a>
-            <?php
+                <a class="nav-item nav-link" data-bs-toggle="modal" href="#togglesignup">Sign up</a>
+                <a class="nav-item nav-link" data-bs-toggle="modal" href="#togglelogin">Login</a>
+                <?php
                 }
             ?>
 
+            </div>
+        </nav>
+    </section>
+    <section class="bgImg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="modal fade" id="togglesignup" aria-hidden="true" aria-labelledby="togglesignup"
+                    tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="togglesignup">Sign up!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="modalContent">
+                                <!-- Content from PHP page will load here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="togglelogin" aria-hidden="true" aria-labelledby="togglelogin" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="togglelogin">Login</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="loginContent">
+                                <!-- Content from PHP page will load here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="btn btn-primary" data-bs-toggle="modal" href="#togglesignup" role="button">Sign up!</a>
+
+                <script>
+                $(document).ready(function() {
+                    $('#togglesignup').on('show.bs.modal', function(e) {
+                        $('#modalContent').load('signup.php');
+                    });
+                });
+
+                $(document).ready(function() {
+                    $('#togglelogin').on('show.bs.modal', function(e) {
+                        $('#loginContent').load('login.php');
+                    });
+                });
+                </script>
+            </div>
         </div>
-    </nav>
+</section>
 </body>
