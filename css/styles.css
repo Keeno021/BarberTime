@@ -1,3 +1,7 @@
+.footer{
+  background: #152F4F;
+  color:white;
+}
 .bgImg {
     background-image: url('../img/banner.png');
     background-position: center;
