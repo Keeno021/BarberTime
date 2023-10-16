@@ -11,7 +11,7 @@ $calendar = new Calendar();
             <div class="col-sm">
                 <?php 
                 if (isset($_SESSION['username'])) {
-                    echo '<h4>You are logged in as '. $_SESSION['username']. ' as admin</h4>';
+                    echo '<h4>You are logged in as '. $_SESSION['username']. '</h4>';
                 } else {
                     echo '<h4>You are not logged in</h4>';
                 }
@@ -19,7 +19,7 @@ $calendar = new Calendar();
             </div>
             <div class="col-sm-3"></div>
         </div>
-<?php echo $calendar; ?>
+        <?php echo $calendar; ?>
     </div>
 </section>
 
