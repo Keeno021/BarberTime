@@ -1,6 +1,8 @@
 <?php 
 session_start();
 include "includes/header.php";
+include 'includes/calendar.inc.php';
+$calendar = new Calendar();
 ?>
 <section class="content">
     <div class="container">
@@ -17,6 +19,7 @@ include "includes/header.php";
             </div>
             <div class="col-sm-3"></div>
         </div>
+        <?php echo $calendar; ?>
     </div>
 </section>
 
