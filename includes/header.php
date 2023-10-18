@@ -91,7 +91,13 @@
                 </script>
             </div>
             <div class="col-sm">
-            <a class="btn btn-primary" data-bs-toggle="modal" href="#togglesignup" role="button">Sign up!</a>
+            <?php 
+                if (!isset($_SESSION['username'])) {
+                ?>
+                <a class="btn btn-primary" data-bs-toggle="modal" href="#togglesignup" role="button">Sign up!</a>
+                 <?php
+                }
+            ?>
             </div>
             <div class="col-sm-4"></div>
         </div>
