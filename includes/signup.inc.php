@@ -1,6 +1,8 @@
 <?php
 if (isset($_POST["signup"])) {
-    include "../includes/dbconnection.php"; 
+    require_once dirname(__FILE__).'/config.php';
+    include INCLUDES_PATH . 'dbconnection.php'; 
+ 
 
     //Grabbing data from form
     $username = $_POST["username"];

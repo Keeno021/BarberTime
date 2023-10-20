@@ -1,7 +1,9 @@
 <?php 
 session_start();
-include "includes/header.php";
-include 'includes/appointments.inc.php';
+require_once dirname(__FILE__).'/config.php';
+include INCLUDES_PATH . 'header.php'; 
+include INCLUDES_PATH . 'appointments.inc.php'; 
+
 ?>
 <section class="content">
     <div class="container">

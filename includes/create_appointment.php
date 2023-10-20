@@ -1,7 +1,9 @@
 <?php
 if (isset($_POST["create_appointment"])) {
-    include "includes/dbconnection.php"; 
-    include "includes/appointments.inc.php"; 
+    require_once dirname(__FILE__).'/config.php';
+    include INCLUDES_PATH . 'dbconnection.php'; 
+    include INCLUDES_PATH . 'appointments.inc.php'; 
+
 
     $username = $_POST["username"];
     $date = $_POST["date"];

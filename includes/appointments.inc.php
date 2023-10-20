@@ -1,5 +1,6 @@
 <?php 
-include "includes/dbconnection.php"; 
+require_once dirname(__FILE__).'/config.php';
+include INCLUDES_PATH . 'dbconnection.php'; 
 
 // Fetch existing appointments for the selected date
 $date = date('Y-m-d');
@@ -33,7 +34,7 @@ while ($start <= $end) {
 }
 
 // $time_slots now contains available time slots for the selected date
-print_r($time_slots);
+// print_r($time_slots);
 
 // fetch appointments for a given date
 function getAppointments($conn, $date) {

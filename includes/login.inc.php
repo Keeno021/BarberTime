@@ -1,6 +1,8 @@
 <?php
 if (isset($_POST["login"])) {
-    include "../includes/dbconnection.php"; 
+    require_once dirname(__FILE__).'/config.php';
+    include INCLUDES_PATH . 'dbconnection.php'; 
+
 
     $username = $_POST["username"];
     $password = $_POST["password"];
