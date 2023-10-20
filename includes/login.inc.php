@@ -36,6 +36,8 @@ if (isset($_POST["login"])) {
                         exit();
                     } else {
                         header("location: ../admin/admin.php?login=success");
+                        session_start();
+                        $_SESSION['admin'] = $row['admin'];
                         exit();
                     }
                    

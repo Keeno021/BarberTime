@@ -10,7 +10,10 @@ $calendar = new Calendar();
             <div class="col-sm-3"></div>
             <div class="col-sm">
                 <?php 
-                if (isset($_SESSION['username'])) {
+                if (isset($_SESSION['admin'])) {
+                    echo '<h4>You are logged in as '. $_SESSION['username']. ' as admin</h4>';
+                    echo $calendar;
+                } else if (isset($_SESSION['username'])) {
                     echo '<h4>You are logged in as '. $_SESSION['username']. '</h4>';
                     echo $calendar;
                 } else {
