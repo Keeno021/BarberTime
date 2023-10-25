@@ -1,5 +1,23 @@
 <?php 
-include "includes/dbconnection.php"; 
+include "includes/dbconnection.php";
+function getAppointments($conn, $date) {
+    $appointments = array();
+    
+    $sql = "SELECT start_time, end_time, user_id FROM appointments WHERE date = ?";
+    $stmt = mysqli_stmt_init($conn);
+
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("s", $date);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        while ($row = $result->fetch_assoc()) {
+            $appointments[] = $row;
+        }
+        $stmt->close();
+    }
+    return $appointments;
+}
 
 // Fetch existing appointments for the selected date
 $date = date('Y-m-d');
@@ -34,23 +52,3 @@ while ($start <= $end) {
 
 // $time_slots now contains available time slots for the selected date
 // print_r($time_slots);
-
-// fetch appointments for a given date
-function getAppointments($conn, $date) {
-    $appointments = array();
-    
-    $sql = "SELECT start_time, end_time, user_id FROM appointments WHERE date = ?";
-    $stmt = mysqli_stmt_init($conn);
-
-    if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("s", $date);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        
-        while ($row = $result->fetch_assoc()) {
-            $appointments[] = $row;
-        }
-        $stmt->close();
-    }
-    return $appointments;
-}

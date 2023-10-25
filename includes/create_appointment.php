@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST["create_appointment"])) {
-    include "includes/dbconnection.php"; 
-    include "includes/appointments.inc.php"; 
+    include "../includes/dbconnection.php"; 
+    include "../includes/appointments.inc.php"; 
 
     $username = $_POST["username"];
     $date = $_POST["date"];
