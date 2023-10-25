@@ -17,13 +17,13 @@ include 'includes/appointments.inc.php';
                     echo '<h4>You are not logged in</h4>';
                 }
             ?>
-            </div>
-            <div class="col-sm-3"></div>
-
+            <?php 
+            if (isset($_SESSION['admin']) || isset($_SESSION['username'])) {
+                ?>
             <h1 class="mt-5">Create Appointment</h1>
         <form action="includes/create_appointment.php" method="post">
             <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="username">Name</label>
                     <input type="text" class="form-control" id="username" name="username" value="<?php echo $_SESSION['username']; ?>"
                         aria-describedby="username" placeholder="Enter username">
             </div>
@@ -46,6 +46,11 @@ include 'includes/appointments.inc.php';
             </div>
             <button type="submit" name="create_appointment" class="btn btn-primary">Create Appointment</button>
         </form>
+        <?php 
+            }
+        ?>
+            </div>
+            <div class="col-sm-3"></div>
         </div>
 </section>
 <?= include "includes/footer.php";?>

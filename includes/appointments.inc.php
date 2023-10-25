@@ -33,7 +33,7 @@ while ($start <= $end) {
 }
 
 // $time_slots now contains available time slots for the selected date
-print_r($time_slots);
+// print_r($time_slots);
 
 // fetch appointments for a given date
 function getAppointments($conn, $date) {
