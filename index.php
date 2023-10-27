@@ -38,16 +38,16 @@ include "includes/appointments.inc.php";
                     <div class="form-group">
                         <label for="start_time">Time</label>
                         <?php
-        if (empty($is_available)) {
-            echo "No available time slots for the selected date.";
-        } else {
+        // if (empty($is_available)) {
+            // echo "No available time slots for the selected date.";
+        // } else {
             // Dropdown for available time slots
             echo '<select class="form-control" id="start_time" name="start_time" required>';
             foreach ($time_slots as $time_slot) {
                 echo '<option value="' . $time_slot . '">' . $time_slot . '</option>';
             }
             echo '</select>';
-        }
+        // }
         ?>
                     </div>
                     <button type="submit" name="create_appointment" class="btn btn-primary mt-4">Create

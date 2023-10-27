@@ -1,13 +1,13 @@
 <?php 
 include "includes/dbconnection.php";
-function getAppointments($conn, $date) {
+function getAppointments($conn, $date, $start_time) {
     $appointments = array();
     
-    $sql = "SELECT start_time, end_time, user_id FROM appointments WHERE date = ?";
+    $sql = "SELECT start_time, end_time, user_id FROM appointments WHERE start_time = ? AND date = ?";
     $stmt = mysqli_stmt_init($conn);
 
     if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("s", $date);
+        $stmt->bind_param("ss", $date, $start_time);
         $stmt->execute();
         $result = $stmt->get_result();
         
@@ -19,9 +19,8 @@ function getAppointments($conn, $date) {
     return $appointments;
 }
 
-// Fetch existing appointments for the selected date
-$date = date('Y-m-d');
-$existing_appointments = getAppointments($conn, $date);
+// $date = date('Y-m-d');
+$existing_appointments = getAppointments($conn, $date, $start_time);
 
 // Generate time slots
 $start = strtotime('17:00');
