@@ -19,7 +19,7 @@ function getAppointments($conn, $date, $start_time) {
     return $appointments;
 }
 
-// $date = date('Y-m-d');
+$date = date('Y-m-d');
 $existing_appointments = getAppointments($conn, $date, $start_time);
 
 // Generate time slots
