@@ -13,13 +13,14 @@ function getAppointments($conn, $date, $start_time) {
         
         while ($row = $result->fetch_assoc()) {
             $appointments[] = $row;
+            $date = $row->date;
+            $start_time = $row->start_time;
         }
         $stmt->close();
     }
     return $appointments;
 }
 
-$date = date('Y-m-d');
 $existing_appointments = getAppointments($conn, $date, $start_time);
 
 // Generate time slots
