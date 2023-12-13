@@ -27,4 +27,4 @@ include "includes/calandar.php";
             <div class="col-sm-3"></div>
         </div>
 </section>
-<?= include "includes/footer.php";?>
+<?php include "includes/footer.php";?>
