@@ -4,7 +4,7 @@ if (isset($_POST["create_appointment"])) {
     include "../includes/appointments.inc.php"; 
 
     $username = $_POST["username"];
-    $date = $_POST["date"];
+    $date = $_POST["selected_day"];
     $start_time = $_POST["start_time"];
 
     if (empty($username) || empty($date) || empty($start_time)) {
