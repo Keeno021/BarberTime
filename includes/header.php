@@ -18,8 +18,8 @@
 </head>
 
 <body>
-    <section>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
+    <section class="navbar">
+        <nav class="navbar-expand-lg p-3">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="index.php">Home</a>
                 <?php 
