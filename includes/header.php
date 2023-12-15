@@ -25,6 +25,7 @@
                 <?php 
                 if (isset($_SESSION['username'])) {
                 ?>
+                <a class="nav-item nav-link" href="agenda.php">Book now!</a>
                 <form class="d-flex" method="POST" action="includes/logout.inc.php">
                     <input type="submit" name="logout" class="btn btn-outline-danger" value="Logout">
                 </form>

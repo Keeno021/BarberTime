@@ -17,11 +17,6 @@ include "includes/calandar.php";
                 } else {
                     echo '<h4>You are not logged in</h4>';
                 }
-
-                if (isset($_SESSION['admin']) || isset($_SESSION['username'])) {
-                    echo $controls;
-                    echo draw_calendar($month, $year);
-                }
             ?>
             </div>
             <div class="col-sm-3"></div>

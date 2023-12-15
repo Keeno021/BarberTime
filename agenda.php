@@ -8,7 +8,7 @@ include "includes/calandar.php";
     <div class="container">
         <div class="row">
             <div class="col-sm-3"></div>
-            <div class="col-sm">
+            <div class="col-sm mt-5">
                 <?php 
                 if (isset($_SESSION['admin']) || isset($_SESSION['username'])) {
                     echo $controls;
