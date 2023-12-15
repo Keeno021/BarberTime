@@ -102,7 +102,7 @@ table.calendar {
 /* Calendar headings */
 
 .calendar-day-head {
-    color: #617796;
+    color: #b06ab3;
     font-weight: 500;
     text-align: center;
     width: 14.28%; /* 100% / 7 */
@@ -138,6 +138,6 @@ table.calendar {
     text-decoration: none;
 }
 .current-day { 
-  color: #617796 !important; 
+  color: #b06ab3 !important; 
   text-decoration: none !important;
 }
