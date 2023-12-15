@@ -8,6 +8,7 @@
 
 .nav-link:hover {
   color: #b06ab3;
+  font-weight: 600;
 }
 
 ul {
