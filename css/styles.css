@@ -141,3 +141,21 @@ table.calendar {
   color: #b06ab3 !important; 
   text-decoration: none !important;
 }
+
+/* Body */
+.inner-div {
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  height: 340px;
+}
+.text-primary {
+  font-size: 22px;
+  line-height: 1.5;
+  color: #152f4f !important;
+  margin-bottom: 15px;
+}
+p {
+  color: #484545;
+}
