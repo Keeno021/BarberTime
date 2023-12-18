@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-lg-5 col-xs-12 about-company">
       <h2>Heading</h2>
-      <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
+      <span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </span>
     </div>
     <div class="col-lg-3 col-xs-12 links">
       <h4 class="mt-lg-0 mt-sm-3">Links</h4>
@@ -18,13 +18,13 @@
     </div>
     <div class="col-lg-4 col-xs-12 location">
       <h4 class="mt-lg-0 mt-sm-4">Location</h4>
-      <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
-      <p class="mb-0"></i>068277474</p>
+      <span>22, Lorem ipsum dolor, consectetur adipiscing</s>
+      <span class="mb-0"></i>068277474</p>
     </div>
   </div>
   <div class="row mt-5">
     <div class="col copyright">
-      <p class=""><small class="text-white-50">© 2023. All Rights Reserved.</small></p>
+      <span class=""><small class="text-white-50">© 2023. All Rights Reserved.</small></span>
     </div>
   </div>
 </div>
