@@ -1,6 +1,9 @@
 <?php 
- if (isset($_SESSION['admin']) || isset($_SESSION['username'])) {
-session_start();
+ if (!isset($_SESSION['admin']) || !isset($_SESSION['username'])) {
+    header("location: index.php?error=sign_up_or_sign_in");
+    exit();
+} else {
+   // session_start();
 include "includes/header.php";
 include "includes/appointments.inc.php";
 include "includes/calandar.php";
@@ -21,8 +24,5 @@ include "includes/calandar.php";
         </div>
 </section>
 <?php include "includes/footer.php";
-} else {
-    header("location: index.php?error=sign_up_or_sign_in");
-    exit();
 }
 ?>
