@@ -14,10 +14,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="../index.php">Home</a>
-            <?php 
+    <section class="navbar">
+        <nav class="navbar-expand-lg p-3">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="../index.php">Home</a>
+                <?php 
                 if (isset($_SESSION['username'])) {
                     echo '<form class="d-flex" method="POST" action="../includes/logout.inc.php">
                     <input type="submit" name="logout" class="btn btn-outline-danger" value="Logout">
@@ -26,9 +27,10 @@
                     echo '<a class="nav-item nav-link" href="signup.php">Sign up</a> <a class="nav-item nav-link" href="login.php">Login</a>';
                 }
     ?>
-        </div>
-        </div>
-        </div>
-    </nav>
+            </div>
+            </div>
+            </div>
+        </nav>
+    </section>
 
 </body>
