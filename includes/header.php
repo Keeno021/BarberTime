@@ -37,6 +37,9 @@
                 <a class="nav-item nav-link" data-bs-toggle="modal" href="#togglelogin">Login</a>
                 <?php
                 }
+                if (isset($_SESSION['admin'])) {
+                    echo '<a class="nav-item nav-link" href="admin/admin.php">Admin</a>';
+                }
             ?>
 
             </div>
