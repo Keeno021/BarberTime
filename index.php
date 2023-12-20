@@ -26,7 +26,13 @@ include "includes/calandar.php";
                     <p>Are you in search of a cutting-edge barber shop that understands the art of men's grooming? Look
                         no
                         further than BarberTime...</p>
+                        <?php if (isset($_SESSION['username'])) {
+                            ?>
                     <p><a href="agenda.php" class="btn btn-primary">Book Your Appointment</a></p>
+
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
 
