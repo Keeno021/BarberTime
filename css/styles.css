@@ -2,6 +2,15 @@
   background-image: linear-gradient(to right, #152f4f, #617796);
   color:white;
 }
+.highlighted-text {
+  color: #4568dc;
+  text-decoration: none;
+}
+
+.highlighted-text:hover {
+  color: #b06ab3;
+}
+
 .nav-link {
   color:white;
 }
